@@ -1,27 +1,36 @@
-html,
-body {
+:root {
+  --clr-primary: #a3d2ca;
+  --clr-paragraph: #767676;
+  --clr-accent: #acb6e5;
+  --clr-yellow: #ffc107;
+  --clr-background: #e45f5c;
+  --br: 5em;
+  --p1: 1rem;
+  --p2: 1.125rem;
+  --m1: 1rem;
+  --m2: 1.125rem;
+}
+*,
+*::before,
+*::after,
+html {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
-  color: #0070f3;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap");
+
+.container {
+  margin: 0 auto;
+  min-height: 80vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-primary);
+  color: white;
+  text-align: center;
+}
+.line {
+  color: #333;
+  border: none;
+  border-bottom: medium double #333;
+  text-align: center;
+  margin: 0;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}

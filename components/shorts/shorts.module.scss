@@ -1,0 +1,14 @@
+.container {
+  height: 100%;
+  padding-left: 0.5rem;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  overflow: hidden;
+  list-style-position: inside;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: black;
+}

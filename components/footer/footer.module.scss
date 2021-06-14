@@ -1,0 +1,13 @@
+.footer {
+  background-color: var(--clr-primary);
+  height: 5rem;
+  padding: auto;
+  display: grid;
+  place-items: center;
+  &__text {
+    font-size: 0.75rem;
+    font-weight: 100;
+    text-align: center;
+    color: white;
+  }
+}

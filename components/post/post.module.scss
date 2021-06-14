@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgContainer {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
