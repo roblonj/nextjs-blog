@@ -3,7 +3,7 @@ import styles from "./post.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-const post = ({ id, slug, cats, summary, imgUrl, date, title }) => {
+const post = ({ id, spotlight, slug, cats, summary, imgUrl, date, title }) => {
   return (
     <Link href={`/posts/${encodeURIComponent(slug)}`}>
       <a>
@@ -11,11 +11,9 @@ const post = ({ id, slug, cats, summary, imgUrl, date, title }) => {
           <div className={styles.imgContainer}>
             <Image
               src={imgUrl}
-              height={100}
-              width={100}
-              // layout="fill"
-              // objectFit="cover"
-              // objectPosition="center center"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center center"
             />
           </div>
           <div className={styles.textContainer}>

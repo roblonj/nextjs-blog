@@ -1,17 +1,19 @@
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .imgContainer {
-  width: 100%;
+  flex-basis: 20%;
   aspect-ratio: 1/1;
-  border-radius: 0.4rem;
-  overflow: hidden;
-  margin-bottom: 0.5rem;
+  border-radius: var(--br);
   position: relative;
 }
+
 .textContainer {
+  flex-basis: 70%;
   display: flex;
   flex-direction: column;
 }

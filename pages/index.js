@@ -2,6 +2,8 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
 import Shorts from "../components/shorts/shorts";
 import PostContainer from "../components/postContainer/postContainer";
+import SpotlightContainer from "../components/spotlightContainer/spotlightContainer";
+import styles from "../styles/index.module.scss";
 import client from "../lib/sanityClient";
 
 export default function Home({ allPostsData }) {
@@ -18,84 +20,35 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <div className="container">
-        <section className="spotlight">
-          <PostContainer postData={allSpotlights} name="Highlighted Articles" />
+      <div className={styles.container}>
+        <section className={styles.spotlight}>
+          <SpotlightContainer
+            postData={allSpotlights}
+            name="Highlighted Articles"
+          />
         </section>
-        <section className="shorts">
+        <section className={styles.shorts}>
           <Shorts postData={allShorts} />
         </section>
-        <section className="ca">
+        <section className={styles.ca}>
           <PostContainer
             postData={allGeos}
             name="Current Affairs/News Analysis"
           />
         </section>
-        <section id="hist" className="hist">
+        <section id="hist" className={styles.hist}>
           <PostContainer postData={allGeos} name="History" />
         </section>
-        <section id="geo" className="geo">
+        <section id="geo" className={styles.geo}>
           <PostContainer postData={allGeos} name="Geography" />
         </section>
-        <section id="economy" className="economy">
+        <section id="economy" className={styles.economy}>
           <PostContainer postData={allGeos} name="Economy" />
         </section>
-        <section id="polity" className="polity">
+        <section id="polity" className={styles.polity}>
           <PostContainer postData={allGeos} name="Polity" />
         </section>
       </div>
-
-      <style jsx>{`
-        .container {
-          padding: 0 4rem;
-          display: grid;
-          grid-template-columns: 5fr 1fr;
-          grid-auto-rows: minmax(5rem, auto);
-          grid-template-areas:
-            "spotlight shorts"
-            "ca ca"
-            "hist hist"
-            "geo geo"
-            "economy economy"
-            "polity polity";
-           {
-            /* gap: 1rem; */
-          }
-        }
-
-        @media (max-width: 40rem) {
-          .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 1rem;
-          }
-          .shorts {
-            display: none;
-          }
-        }
-        .spotlight {
-          grid-area: spotlight;
-        }
-        .ca {
-          grid-area: ca;
-        }
-        .shorts {
-          grid-area: shorts;
-        }
-        .geo {
-          grid-area: geo;
-        }
-        .hist {
-          grid-area: hist;
-        }
-        .economy {
-          grid-area: economy;
-        }
-        .polity {
-          grid-area: polity;
-        }
-      `}</style>
     </Layout>
   );
 }

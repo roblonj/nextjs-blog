@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Footer from "../footer/footer";
-import styles from "./layout.module.css";
+import styles from "./layout.module.scss";
 import NavBar from "../navbar/navbar";
 export const siteTitle = "CSM";
 
@@ -23,26 +23,9 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
-            <NavBar />
-            {/* <div className={styles.banner}>
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <h1 className={utilStyles.headingLg}>
-                A place to get all the resources you need for preparation
-              </h1>
-              <Button name="Explore Roadmap 2021" />
-            </div> */}
-          </>
-        ) : (
-          <>
-            <NavBar />
-            {/* s */}
-          </>
-        )}
+        <NavBar />
       </header>
-
-      <main>{children}</main>
+      <main className={styles.childrenLayout}>{children}</main>
       <Footer />
     </div>
   );

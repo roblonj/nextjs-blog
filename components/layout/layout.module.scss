@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap");
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.header {
+  background-color: var(--clr-primary);
+  color: white;
+}
+.childrenLayout {
+  padding: 0 4rem;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+@media (max-width: 700px) {
+  .childrenLayout {
+    padding: 0 0.5rem;
+  }
+}
