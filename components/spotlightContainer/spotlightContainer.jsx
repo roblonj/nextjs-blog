@@ -10,7 +10,7 @@ export default function SpotlightContainer({ postData, name }) {
       <ul className={styles.list}>
         {postData.map(
           ({ _id, cats, slug, imgUrl, publishedAt, title, summary }) => (
-            <Link href={`/posts/${encodeURIComponent(slug)}`}>
+            <Link href={`/posts/${encodeURIComponent(slug)}`} key={_id}>
               <a>
                 <article className={styles.card}>
                   <div className={styles.imgContainer}>

@@ -1,6 +1,5 @@
 import Layout from "../../components/layout/layout";
 import Head from "next/head";
-// import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date/date";
 import utilStyles from "../../styles/utils.module.css";
 import client from "../../lib/sanityClient";
@@ -25,7 +24,6 @@ export default function Post({ postData }) {
             dataset="production"
           />
         </div>
-        {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
       </article>
     </Layout>
   );
@@ -33,7 +31,6 @@ export default function Post({ postData }) {
 
 //Return all the dynamic routes
 export async function getStaticPaths() {
-  // const paths = getAllPostIds();
   const query = `*[_type == "post"]|order(publishedAt desc){"slug":slug.current,}`;
   const allSlugs = await client.fetch(query);
   const paths = allSlugs.map((post) => ({
@@ -41,7 +38,6 @@ export async function getStaticPaths() {
       slug: post.slug,
     },
   }));
-  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -49,11 +45,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const postData = await getPostData(params.id);
-  console.log(params.slug);
   const query = `*[_type == "post" && slug.current=="${params.slug}"]{title, publishedAt, body}`;
   const data = await client.fetch(query);
   const postData = data[0];
-  console.log(postData);
   return { props: { postData } };
 }

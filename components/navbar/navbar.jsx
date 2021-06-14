@@ -13,7 +13,6 @@ config.autoAddCss = false;
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   const classList = isOpen ? styles.navListOpen : styles.navListClose;
   return (
     <nav className={styles.nav}>
@@ -24,7 +23,10 @@ const NavBar = () => {
         <a className={utilStyles.headingLg}>UPSC-Ed</a>
       </Link>
 
-      <ul className={styles.navList + " " + classList}>
+      <ul
+        className={styles.navList + " " + classList}
+        onClick={() => setIsOpen(false)}
+      >
         <li>
           <Link href="#geo">Geography</Link>
         </li>
