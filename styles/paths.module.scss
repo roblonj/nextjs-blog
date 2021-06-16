@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 0 10rem;
+  min-width: 50%;
+}
+.imgContainer {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .wrapper {
+    padding: 0;
+  }
+  .imgContainer {
+    height: 40vh;
+  }
+}
+@media (min-width: 900px) and (max-width: 1300px) {
+  .wrapper {
+    padding: 0 5rem;
+  }
+}

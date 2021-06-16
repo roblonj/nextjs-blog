@@ -31,7 +31,7 @@
 .postTitle {
   font-size: 0.85rem;
   font-weight: 300;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   text-decoration: underline;
   color: black;
 }

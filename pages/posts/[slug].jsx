@@ -4,6 +4,8 @@ import Date from "../../components/date/date";
 import utilStyles from "../../styles/utils.module.css";
 import client from "../../lib/sanityClient";
 import BlockContent from "@sanity/block-content-to-react";
+import Image from "next/image";
+import styles from "../../styles/paths.module.scss";
 
 //Default component of the page
 export default function Post({ postData }) {
@@ -12,7 +14,15 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
+      <article className={styles.wrapper}>
+        <div className={styles.imgContainer}>
+          <Image
+            src={postData.imgUrl}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center center"
+          />
+        </div>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
           <Date dateString={postData.publishedAt} />
@@ -45,7 +55,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const query = `*[_type == "post" && slug.current=="${params.slug}"]{title, publishedAt, body}`;
+  const query = `*[_type == "post" && slug.current=="${params.slug}"]{
+    title,
+    "imgUrl":mainImage.asset->url,
+    publishedAt, 
+    body}`;
   const data = await client.fetch(query);
   const postData = data[0];
   return { props: { postData } };
